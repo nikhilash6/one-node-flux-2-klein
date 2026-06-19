@@ -7504,7 +7504,7 @@ width:"34px",background:C.bg2,border:`1px solid ${C.border}`,borderRadius:"4px",
           };
           if(extModel){ delete prompt[WFI.model]; if(useKV) prompt[WFI.kv].inputs.model=extModel; }
           else set(WFI.model,"unet_name",S.model||"flux-2-klein-9b-kv.safetensors");
-          if(extClip){ delete prompt[WFI.textEnc]; prompt[WFI.promptPos].inputs.clip=extClip; prompt[WFI.promptNeg].inputs.clip=extClip; }
+          if(extClip){ delete prompt[WFI.textEnc]; prompt[WFI.promptPos].inputs.clip=extClip; }
           else set(WFI.textEnc,"clip_name",S.textEncoder||"qwen_3_8b_fp8mixed.safetensors");
           if(extVae){ delete prompt[WFI.vae]; prompt["FKI:206"].inputs.vae=extVae; prompt["FKI:210"].inputs.vae=extVae; prompt["FKI:164"].inputs.vae=extVae; }
           else set(WFI.vae,"vae_name",S.vae||"flux2-vae.safetensors");
