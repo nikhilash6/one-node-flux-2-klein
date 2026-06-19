@@ -8277,9 +8277,7 @@ width:"34px",background:C.bg2,border:`1px solid ${C.border}`,borderRadius:"4px",
       const GAL_LIMIT=50;
       const GAL_MORE=50;
 
-      const _galImgUrl=(v)=>api.apiURL(
-        `/view?filename=${encodeURIComponent(v.filename)}&type=output&subfolder=${encodeURIComponent(v.subfolder||"")}`
-      );
+      const _galImgUrl=(v)=>`/view?filename=${encodeURIComponent(v.filename)}&type=output&subfolder=${encodeURIComponent(v.subfolder||"")}`;
 
       const _fetchMeta=async(v,force=false)=>{
         const key=v.filename;
