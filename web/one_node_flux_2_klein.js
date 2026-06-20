@@ -7339,7 +7339,8 @@ width:"34px",background:C.bg2,border:`1px solid ${C.border}`,borderRadius:"4px",
           if(!_fsSourceSlot.hasFile()){_slotErr(_fsSourceSlot,_fsSourceLbl);return;}
           if(!S.fsLora||S.fsLora==="none") {showError("FACESWAP: select a Faceswap LoRA in Settings.");return;}
         }
-        if(!S.model){showError("No model selected. Open Settings and choose a model.");return;}
+        const _hasExtModel=(()=>{ const n=app.graph.getNodeById(self.id); const inputs=n?.inputs||[]; const slot=inputs.find(i=>i.name==="model"); return slot?.link!=null; })();
+        if(!S.model&&!_hasExtModel){showError("No model selected. Open Settings and choose a model.");return;}
 
         clearError();S.generating=true;
 
